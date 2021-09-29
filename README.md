@@ -80,4 +80,4 @@ Type: Boolean
 
 ### 6 - Go to [My Running Local Docker App](http://localhost:8000/index.html)
 
-### 7 - Test your Flag in Harness
+### 7 - Test your Flag in [Harness](https://app.harness.io)
