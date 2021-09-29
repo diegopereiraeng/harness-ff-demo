@@ -2,7 +2,9 @@
 
 ## FF DEMO/LAB
 
-#### Create the flags and add them to code:
+[The sample App](https://diegopereiraeng.github.io/html/index.html)
+
+#### Clone the Code, Create the flags and add them to code:
 
 ### 1 - Build your App (RUNNING LOCALLY)
 
