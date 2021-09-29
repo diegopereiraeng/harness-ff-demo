@@ -1,4 +1,4 @@
-import { initialize, Event } from 'https://unpkg.com/@harnessio/ff-javascript-client-sdk@1.4.8/dist/sdk.client.js'
+
 
 var target = getTarget()
 var menuStyle = ''
@@ -6,11 +6,9 @@ var menuSelectedStyle= 'w3-blue'
 var firstStart = true
 var currentContent
 
-const cf = initialize(
-	'eae200d6-fec2-4352-9227-927a67df73ea',
-	// ^^ UPDATE THE FF SDK KEY HERE ^^ //
-	target
-);
+
+// ^^ INITIALIZE THE FF SDK KEY HERE ^^ //
+
 
 var first = 0;
 var target = "";
@@ -257,60 +255,8 @@ function getTarget(){
 	return targetObj
 }
 
-/* Logic to call dynamically Feature Flags methods using their own names */
-
-cf.on(Event.READY, flags => {
-	console.log("FLAGS:"+JSON.stringify(flags, null, 2));
-	for (const [key, value] of Object.entries(flags)) {
-		console.log(key);
-		console.log(value);
-		var stringFunction = key+"('"+value+"')";
-		console.log(stringFunction)
-		try{
-			eval(stringFunction);
-		}
-		catch(e){
-			console.log(e)
-		}
-	}
-});
-
-/* End Logic to call dynamically Feature Flags methods using their own names */
-
 /* Feature Flags EVENTS */
 
-cf.on(Event.CHANGED, flagInfo => {
-	console.log("FLAG Changed:"+JSON.stringify(flagInfo, null, 2));
-	console.log("FLAG Name:"+flagInfo.flag)
-	console.log("FLAG identifier:"+flagInfo.identifier)
-	console.log("FLAG kind:"+flagInfo.kind)
-	console.log("FLAG value:"+flagInfo.value)
-	console.log("type of:"+typeof(flagInfo))
-	var stringFunction = flagInfo.flag+"('"+flagInfo.value+"')";
-	console.log(stringFunction)
-	try{
-		eval(stringFunction);
-	}
-	catch(e){
-		console.log(e)
-	}
-	console.log("FF is Awesome");
-	if (flagInfo.deleted) {
-		console.log('Flag'+flagInfo.flag+' is deleted');
-		//log(JSON.stringify(flagInfo, null, 2))
-	}
-});
-cf.on(Event.DISCONNECTED, () => {
-  // Event happens when connection is disconnected
-	console.log("FF Disconnected");
-})
 
-cf.on(Event.ERROR, error => {
-	console.log("FF Errror");
-	console.log(error);
-	cf.off()
-	cf.close();
-	// Event happens when connection some error has occurred
-})
 
 /* End Feature Flags EVENTS */
