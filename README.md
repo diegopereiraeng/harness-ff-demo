@@ -17,8 +17,6 @@
 
 ### 4 - Add your FEATURE =D
 
-### 5 - Build your app again and test your flag
-
 in code look for:
 
 ----> ADD Your FEATURES HERE <--------
@@ -74,3 +72,10 @@ Type: Boolean
         }
     }
 
+### 5 - Build your app again and test your flag
+
+    BUILD=231
+	docker build -t cv-demo-ui:$BUILD -f Dockerfile .
+	docker run -it -p 8000:80 cv-demo-ui:$BUILD
+
+### 6 - Go to [My Running Local Docker App](http://localhost:8000/index.html)
