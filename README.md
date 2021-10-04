@@ -13,30 +13,12 @@
 	docker run -it -p 8000:80 cv-demo-ui:$BUILD
 
 
-### 2 - Go to Harness and Create a Project + Flag + Environment + SDK Key
+### 3 - File where features you want to add flags are [ff.js (html/js/ff.js)](https://github.com/diegopereiraeng/harness-ff-bankingapp-ui/blob/main/html/js/ff.js) 
 
-### 3 - Edit the [ff.js (html/js/ff.js)](https://github.com/diegopereiraeng/harness-ff-bankingapp-ui/blob/main/html/js/ff.js) file and initialize the SDK code:
-
-### 4 - Add your FEATURE =D
-
-in code look for:
-
-----> ADD Your FEATURES HERE <--------
-
-
-(Suggested Features):
-
-If you are using the suggested features, Create the flags using the same name of suggested functions below.
-
-ex: function Halloween(flag)...
-flag name in Harness will be "Halloween"
+### 4 - Flag the feature below
 
 ### ENABLE OR DISABLE HALLOWEEN MODE (DEPLOYED)
 Use Harness Boolean FF to enable or disable Halloween mode.
-
-Flag: Halloween
-
-Type: Boolean
 
 	function Halloween(flag) {
         var halloweenElement = $("body").find("#Halloween");
@@ -57,12 +39,8 @@ Type: Boolean
         }
     }
 
-### HALLOWEEN JACK
+### HALLOWEEN JACK (Optional)
 Enable or Disable the Halloween Jack
-
-Flag: HalloweenJack
-
-Type: Boolean
 
 	function HalloweenJack(flag) {
         var jack = $("body").find(".halloween");

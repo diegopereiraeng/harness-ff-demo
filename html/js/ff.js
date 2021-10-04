@@ -1,20 +1,11 @@
-
-
-var target = getTarget()
 var menuStyle = ''
 var menuSelectedStyle= 'w3-blue'
 var firstStart = true
 var currentContent
 
-
-// ^^ INITIALIZE THE FF SDK KEY HERE ^^ //
-
-
 var first = 0;
-var target = "";
 var close = 0;
 
-/* FF Control */
 
 var modalStatus = ''
 var modalStatusMessage = ""
@@ -27,20 +18,7 @@ var Banner = true
 var backgroundBackup = "#2f81d4"
 var halloweenSong = new Audio('./songs/HalloweenThemeSong.mp3');
 
-/* End FF Control */
 
-/* START FEATURE FLAGS FUNCTIONS */
-
-// ----> ADD Your FEATURES HERE <-------- //
-// ----> ADD Your FEATURES HERE <-------- //
-// ----> ADD Your FEATURES HERE <-------- //
-// ----> ADD Your FEATURES HERE <-------- //
-// ----> ADD Your FEATURES HERE <-------- //
-// ----> ADD Your FEATURES HERE <-------- //
-
-/* END FEATURE FLAGS FUNCTIONS */
-
-/* BUILT IN FF */
 
 function HalloweenJack(flag) {
 		var jack = $("body").find(".halloween");
@@ -183,80 +161,4 @@ function checkLogo(){
 
 /* End Harness HOME FF */
 
-function getTarget(){
-	var targetObj
-	if(typeof(Storage) !== "undefined"){
-		if((typeof(window.localStorage.harnessDemoSignUpEmail) !== "undefined") && typeof(window.localStorage.harnessDemoCompany) !== "undefined"){
-			if (window.location.href.indexOf("index.html") > -1) {
-				targetObj = {
-							identifier: 'Guest',
-							name: "Guest",
-							attributes: {
-							email: "community@harness.io",
-							Company: "Community",
-							Name: "Visitor"
-						}
-				}
-				var customer = window.localStorage.harnessCustomer
-				if (customer == 'true') {
-					var ffID = (window.localStorage.harnessDemoSignUpEmail).replace(/[^a-zA-Z]/g, "");
-					targetObj = {
-						identifier: ffID,
-						name: window.localStorage.harnessDemoSignUpName,
-						attributes: {
-							email: window.localStorage.harnessDemoSignUpEmail,
-							Company: window.localStorage.harnessDemoSignUpCompany,
-							Name: window.localStorage.harnessDemoSignUpName
-						}
-					}
-					menuStyle = 'new_menu'
-				}
-			}
-			else{
-				var ffID = (window.localStorage.harnessDemoSignUpEmail).replace(/[^a-zA-Z]/g, "");
-				targetObj = {
-						identifier: ffID,
-						name: window.localStorage.harnessDemoSignUpName,
-						attributes: {
-						email: window.localStorage.harnessDemoSignUpEmail,
-						Company: window.localStorage.harnessDemoSignUpCompany,
-						Name: window.localStorage.harnessDemoSignUpName
-					}
-				}
-			}
-			var welcome = $("body").find("#Welcome")
-			welcome.text("");
-			welcome.append("Welcome, <br><strong>"+window.localStorage.harnessDemoSignUpName+"</strong>")
-		}
-		else{
-			targetObj = {
-				identifier: 'Guest',
-				name: "Guest",
-				attributes: {
-				email: "community@harness.io",
-				Company: "Community",
-				Name: "Visitor"
-				}
-				}
-		}
-	}
-	else
-	{
-		targetObj = {
-			identifier: 'Guest',
-			name: "Guest",
-			attributes: {
-			email: "community@harness.io",
-			Company: "Community",
-			Name: "Visitor"
-			}
-			}
-	}
-	return targetObj
-}
 
-/* Feature Flags EVENTS */
-
-
-
-/* End Feature Flags EVENTS */
