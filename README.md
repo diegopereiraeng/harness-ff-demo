@@ -13,7 +13,7 @@
 	docker run -it -p 8000:80 cv-demo-ui:$BUILD
 
 
-### 3 - File where feature you want to add flags are [ff.js (html/js/ff.js)](https://github.com/diegopereiraeng/harness-ff-bankingapp-ui/blob/main/html/js/ff.js) 
+### 3 - File where features you want to add flags are [ff.js (html/js/ff.js)](https://github.com/diegopereiraeng/harness-ff-bankingapp-ui/blob/main/html/js/ff.js) 
 
 ### 4 - Flag the feature below
 
