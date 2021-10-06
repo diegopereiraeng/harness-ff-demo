@@ -8,14 +8,19 @@
 
 ### 1 - Build your App (RUNNING LOCALLY)
 
+Run these commands in the repo folder:
+
 	BUILD=230
 	docker build -t cv-demo-ui:$BUILD -f Dockerfile .
 	docker run -it -p 8000:80 cv-demo-ui:$BUILD
 
+### 2 - Go to [My Running Local Docker App](http://localhost:8000/index.html)
 
-### 3 - File where features you want to add flags are [ff.js (html/js/ff.js)](https://github.com/diegopereiraeng/harness-ff-demo/blob/master/html/js/ff.js) 
+### 3 - LOGIN PAGE HTML File location [index.html (html/index.html)](./html/index.html)
 
-### 4 - Flag the feature below
+### 4 - File where features you want to add flags in javascript are [ff.js (html/js/ff.js)](./html/js/ff.js) 
+
+### 5 - Flag the feature below or any other feature you want.
 
 ### ENABLE OR DISABLE HALLOWEEN MODE (DEPLOYED)
 Use Harness Boolean FF to enable or disable Halloween mode.
